@@ -9,12 +9,13 @@ namespace TowerDefese
 {
     public class RoadMover : MonoBehaviour
     {
-        [SerializeField] private SpriteShapeController _spriteShapeController;
+        private SpriteShapeController _spriteShapeController;
         private List<Vector2> _points;
-        [SerializeField] private Rigidbody2D _body2D;
 
         private void Start()
         {
+            _spriteShapeController = FindObjectOfType<SpriteShapeController>();
+            transform.parent = _spriteShapeController.transform;
             GetWayPoints();
         }
 
