@@ -9,7 +9,7 @@ namespace TowerDefese
     {
         private void Start()
         {
-            Debug.Log(Model.Speed);
+            
         }
     }
 }
