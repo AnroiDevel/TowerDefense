@@ -12,9 +12,11 @@ namespace TowerDefese
         [SerializeField] private float _timeBulletLife;
         [SerializeField] private Transform _muzzle;
         [SerializeField] private float _speed;
+        [SerializeField] private float _rechargeTime;
+
+        private bool _willingness = true;
 
         private GameObject[] _bullets;
-
         private void Start()
         {
             Init();
@@ -30,6 +32,12 @@ namespace TowerDefese
             }
         }
 
+        private IEnumerator Recharged(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _willingness = true;
+        }
+
         private IEnumerator FlyBullet(GameObject bullet, float timeFly)
         {
             yield return new WaitForSeconds(timeFly);
@@ -40,6 +48,8 @@ namespace TowerDefese
         {
             foreach (var bullet in _bullets)
             {
+                if (!_willingness)
+                    return;
                 if (!bullet.activeInHierarchy)
                 {
                     bullet.transform.position = _muzzle.position;
@@ -48,6 +58,8 @@ namespace TowerDefese
                     rb.AddForce(transform.up * _speed);
 
                     StartCoroutine(FlyBullet(bullet, _timeBulletLife));
+                    StartCoroutine(Recharged(_rechargeTime));
+                    _willingness = false;
                     return;
 
                 }

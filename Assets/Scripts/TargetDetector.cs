@@ -7,7 +7,18 @@ namespace TowerDefese
 {
     public class TargetDetector : MonoBehaviour
     {
-        public Transform Target { get; private set; }
+        private List<Transform> _targets = new List<Transform>();
+        public Transform Target 
+        { 
+            get 
+            {
+                if(_targets.Count > 0)
+                    return _targets[0];
+                return null;
+            } 
+        }
+
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -15,7 +26,7 @@ namespace TowerDefese
             if (target != null)
             {
                 target.color = Color.red;
-                Target = target.transform;
+                _targets.Add(target.transform);
             }
         }
 
@@ -25,7 +36,7 @@ namespace TowerDefese
             if (target != null)
             {
                 target.color = Color.white;
-                Target = null;
+                _targets.Remove(target.transform);
             }
         }
 

@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _skeletonPrefab;
     [SerializeField] private Transform _startTransform;
+    [SerializeField] private Transform _canvasTransform;
 
-    [SerializeField] private GameObject _nameUIPrefab;
+    [SerializeField] private GameObject _objectInfoPanel;
     private Text _name;
-    private ParentConstraint _parentConstraint;
+    private PositionConstraint _positionConstraint;
     private Skeleton _enemy;
 
     public void CreateEnemy()
@@ -22,19 +23,20 @@ public class GameManager : MonoBehaviour
         enemyGO.transform.position = _startTransform.position;
         _enemy = enemyGO.GetComponent<Skeleton>();
 
-        var nameGO = Instantiate(_nameUIPrefab);
+        var nameGO = Instantiate(_objectInfoPanel, _canvasTransform);
 
-        _name = nameGO.GetComponent<Text>();
-        _parentConstraint = nameGO.GetComponent<ParentConstraint>();
+        _name = nameGO.GetComponentInChildren<Text>();
+        _positionConstraint = nameGO.GetComponent<PositionConstraint>();
 
-        _name.text = _enemy.name;
+        _name.text = _enemy.Model.Name;
 
-        _parentConstraint.AddSource(new ConstraintSource());
-        var soursetransform = _parentConstraint.GetSource(0);
+        _positionConstraint.AddSource(new ConstraintSource());
+        var soursetransform = _positionConstraint.GetSource(0);
         soursetransform.sourceTransform = _enemy.transform;
-
-        _parentConstraint.translationAtRest = Vector3.zero;
-        _parentConstraint.constraintActive = true;
+        soursetransform.weight = 1.0f;
+        _positionConstraint.SetSource(0, soursetransform);
+        _positionConstraint.translationAtRest = Vector3.zero;
+        _positionConstraint.constraintActive = true;
 
     }
 

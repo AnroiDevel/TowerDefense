@@ -1,14 +1,18 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace TowerDefese
 {
     public class Test : MonoBehaviour
     {
-        private void Start()
+       [SerializeField] private Slider _slider;
+        [SerializeField] private GameField _gameField;
+
+        public void GridActivation()
         {
-            Debug.Log("Test");
+            _gameField.ActivateNavigationGrid(_slider.value);
         }
+
     }
 
 }

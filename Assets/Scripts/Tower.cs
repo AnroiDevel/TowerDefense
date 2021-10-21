@@ -9,6 +9,7 @@ namespace TowerDefese
     {
         [SerializeField] private TargetDetector _targetDetector;
         [SerializeField] private float _rotationSpeed;
+        [SerializeField] private Gun _gun;
 
         private void Update()
         {
@@ -21,6 +22,9 @@ namespace TowerDefese
 
                 Vector2 dir = target.position - transform.position;
                 transform.up = Vector2.MoveTowards(transform.up, dir, Time.deltaTime * _rotationSpeed);
+                var angle = Vector2.Angle(transform.up, dir);
+                if (angle < 10)
+                    _gun.Shot();
             }
 
         }
