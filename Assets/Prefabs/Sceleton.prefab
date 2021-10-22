@@ -136,8 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091dcadbf37dbc145b708f705658ab12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spriteShapeController: {fileID: 0}
-  _body2D: {fileID: 5101670512940018875}
 --- !u!114 &5101670512940018879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model:
     _test: 0
+  _sceletonSO: {fileID: 11400000, guid: 45a0abc8ef2f73244a602658bf99ac7d, type: 2}
