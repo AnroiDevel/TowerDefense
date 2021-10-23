@@ -1,7 +1,7 @@
 ﻿namespace TowerDefese
 {
     [System.Serializable]
-    public  class EnemyModel : BaseModel
+    public  class EnemyModel : BaseModel, IEnemyModel
     {
         public string Name { get; set; }
         public float Speed { get; set; }
