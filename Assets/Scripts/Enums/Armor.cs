@@ -5,5 +5,6 @@
         Soft,
         Medium,
         Hard,
+        HeroArmor,
     }
 }

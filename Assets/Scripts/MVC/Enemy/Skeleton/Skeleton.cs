@@ -5,7 +5,7 @@ namespace TowerDefese
 {
     public class Skeleton : EnemyView<SkeletonModel, EnemyController<SkeletonModel>>
     {
-        [SerializeField] private SpawnManagerScriptableObject _sceletonSO;
+        [SerializeField] private EnemySO _sceletonSO;
 
         public override void Awake()
         {
