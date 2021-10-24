@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 243745830}
   - component: {fileID: 243745829}
   m_Layer: 5
-  m_Name: ImageBeagle
+  m_Name: ImageNecromancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,7 +1668,7 @@ GameObject:
   - component: {fileID: 494163557}
   - component: {fileID: 494163559}
   m_Layer: 5
-  m_Name: BorderImg
+  m_Name: Necromancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2815,7 +2815,7 @@ GameObject:
   - component: {fileID: 1049584346}
   - component: {fileID: 1049584348}
   m_Layer: 5
-  m_Name: BorderImg
+  m_Name: OrkKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2998,7 +2998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc5d1c75160ba747b93ca9636f0350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletonPrefab: {fileID: 5101670512940018870, guid: b860dcb0868f0db4c82dbe16283c02ab, type: 3}
   _startTransform: {fileID: 1577445751}
   _infoPanel: {fileID: 6919181139708602572, guid: 715f7774526e071439398b8bd6beb795, type: 3}
 --- !u!1 &1206609506
@@ -3585,7 +3584,7 @@ GameObject:
   - component: {fileID: 1311670400}
   - component: {fileID: 1311670402}
   m_Layer: 5
-  m_Name: BorderImg
+  m_Name: Beagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4290,7 +4289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 24.10.2021 12:40
+  m_Text: 25.10.2021 02:38
 --- !u!222 &1450391795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4684,6 +4683,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
   _selectedColor: {r: 0.3803922, g: 0.09019608, b: 0, a: 1}
+  _startBtnText: {fileID: 1846033720}
+  _spawner: {fileID: 1206581599}
+  _activeEnemySO: {fileID: 11400000, guid: e4f3e81a2b508d649964f34941d68234, type: 2}
 --- !u!1 &1665936189
 GameObject:
   m_ObjectHideFlags: 0
@@ -5145,7 +5147,7 @@ GameObject:
   - component: {fileID: 1840102937}
   - component: {fileID: 1840102939}
   m_Layer: 5
-  m_Name: BorderImg
+  m_Name: Ogr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5668,7 +5670,7 @@ GameObject:
   - component: {fileID: 2069580490}
   - component: {fileID: 2069580492}
   m_Layer: 5
-  m_Name: BorderImg
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5839,7 +5841,7 @@ GameObject:
   - component: {fileID: 2140300537}
   - component: {fileID: 2140300536}
   m_Layer: 5
-  m_Name: ImageOrcKing
+  m_Name: ImageOrkKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

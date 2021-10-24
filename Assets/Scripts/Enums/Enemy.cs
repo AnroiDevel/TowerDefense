@@ -8,6 +8,6 @@
         Necromancer,
         Goblin,
         Ogr,
-        OrcKing,
+        OrkKing,
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.UI;
@@ -7,13 +8,14 @@ namespace TowerDefese
 {
     public class Spawner : MonoBehaviour
     {
-        [SerializeField] private GameObject _skeletonPrefab;
+        private GameObject _enemyPrefab;
         [SerializeField] private Transform _startTransform;
         [SerializeField] private GameObject _infoPanel;
 
         public void SpawnEnemy()
         {
-            var enemyGO = Instantiate(_skeletonPrefab, _startTransform.position, Quaternion.identity);
+            if (_enemyPrefab == null) return;
+            var enemyGO = Instantiate(_enemyPrefab, _startTransform.position, Quaternion.identity);
             var enemy = enemyGO.GetComponent<Skeleton>();
             CreateInfoUI(enemy);
 
@@ -35,6 +37,11 @@ namespace TowerDefese
             soursetransform.weight = 1.0f;
             positionConstraint.SetSource(0, soursetransform);
             positionConstraint.constraintActive = true;
+        }
+
+        internal void  SetEnemyPrefab(GameObject enemyPrefab)
+        {
+            _enemyPrefab = enemyPrefab;
         }
     }
 }
