@@ -151,4 +151,3 @@ MonoBehaviour:
   Model:
     _test: 0
   _sceletonSO: {fileID: 11400000, guid: 45a0abc8ef2f73244a602658bf99ac7d, type: 2}
-  _infoUI: {fileID: 6919181139708602572, guid: 715f7774526e071439398b8bd6beb795, type: 3}

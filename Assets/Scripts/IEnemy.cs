@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
+using System;
 
 namespace TowerDefese
 {
-    internal interface IEnemy
+    public interface IEnemy
     {
         void GetDamage(float damage);
         string Name { get; }
+
+        event Action<float> GetDamageEvent;
         Transform transform { get; }
     }
 }

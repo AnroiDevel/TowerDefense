@@ -1,7 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.UI;
 
 
 namespace TowerDefese
@@ -10,38 +7,22 @@ namespace TowerDefese
     {
         private GameObject _enemyPrefab;
         [SerializeField] private Transform _startTransform;
-        [SerializeField] private GameObject _infoPanel;
+        [SerializeField] private EnemyUI _enemyUI;
 
         public void SpawnEnemy()
         {
             if (_enemyPrefab == null) return;
             var enemyGO = Instantiate(_enemyPrefab, _startTransform.position, Quaternion.identity);
             var enemy = enemyGO.GetComponent<IEnemy>();
-            CreateInfoUI(enemy);
+           _enemyUI.CreateInfoUI(enemy);
 
         }
 
-        private void CreateInfoUI(IEnemy enemy)
-        {
-            var canvas = GameObject.Find("Canvas");
-            var nameGO = Instantiate(_infoPanel, canvas.transform);
-            var name = nameGO.transform.Find("Name").GetComponentInChildren<Text>();
 
-            name.text = enemy.Name;
-
-            var positionConstraint = nameGO.GetComponent<PositionConstraint>();
-            positionConstraint.AddSource(new ConstraintSource());
-
-            var soursetransform = positionConstraint.GetSource(0);
-            soursetransform.sourceTransform = enemy.transform;
-            soursetransform.weight = 1.0f;
-            positionConstraint.SetSource(0, soursetransform);
-            positionConstraint.constraintActive = true;
-        }
-
-        internal void  SetEnemyPrefab(GameObject enemyPrefab)
+        internal void SetEnemyPrefab(GameObject enemyPrefab)
         {
             _enemyPrefab = enemyPrefab;
         }
     }
+
 }
