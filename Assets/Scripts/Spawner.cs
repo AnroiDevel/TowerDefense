@@ -16,18 +16,18 @@ namespace TowerDefese
         {
             if (_enemyPrefab == null) return;
             var enemyGO = Instantiate(_enemyPrefab, _startTransform.position, Quaternion.identity);
-            var enemy = enemyGO.GetComponent<Skeleton>();
+            var enemy = enemyGO.GetComponent<IEnemy>();
             CreateInfoUI(enemy);
 
         }
 
-        private void CreateInfoUI(Skeleton enemy)
+        private void CreateInfoUI(IEnemy enemy)
         {
             var canvas = GameObject.Find("Canvas");
             var nameGO = Instantiate(_infoPanel, canvas.transform);
             var name = nameGO.transform.Find("Name").GetComponentInChildren<Text>();
 
-            name.text = enemy.Model.Name;
+            name.text = enemy.Name;
 
             var positionConstraint = nameGO.GetComponent<PositionConstraint>();
             positionConstraint.AddSource(new ConstraintSource());

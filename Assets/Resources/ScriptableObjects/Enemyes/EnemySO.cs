@@ -8,6 +8,7 @@ namespace TowerDefese
     {
         public string Name;
         public float Speed;
+        public float Health;
         public Armor Armor;
     }
 }

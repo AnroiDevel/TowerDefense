@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b3a8cddab31ba4429b0110b6ba64bf6, type: 3}
-  m_Name: OrcKing
+  m_Name: Goblin
   m_EditorClassIdentifier: 
-  Name: "\u041A\u041E\u0420\u041E\u041B\u042C \u041E\u0420\u041A\u041E\u0412"
-  Speed: 0.5
-  Armor: 3
+  Name: "\u0413\u041E\u0411\u041B\u0418\u041D"
+  Speed: 1
+  Health: 100
+  Armor: 0
