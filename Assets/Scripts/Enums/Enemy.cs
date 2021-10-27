@@ -1,6 +1,6 @@
 ﻿namespace TowerDefese
 {
-    public enum Enemy
+    public enum Enemies
     {
         None,
         Skeleton,

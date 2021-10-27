@@ -22,20 +22,18 @@ namespace TowerDefese
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            var target = collision.gameObject.GetComponent<SpriteRenderer>();
+            collision.TryGetComponent<IEnemy>(out var target);
             if (target != null)
             {
-                target.color = Color.red;
                 _targets.Add(target.transform);
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            var target = collision.gameObject.GetComponent<SpriteRenderer>();
+            collision.TryGetComponent<IEnemy>(out var target);
             if (target != null)
             {
-                target.color = Color.white;
                 _targets.Remove(target.transform);
             }
         }

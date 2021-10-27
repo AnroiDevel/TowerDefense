@@ -1,7 +1,7 @@
 ﻿namespace TowerDefese
 {
     [System.Serializable]
-    public class EnemyModel : BaseModel, IEnemyModel
+    public class EnemyModel : BaseModel
     {
         public float Health { get; set; }
         public float MaxHealth { get; set; }

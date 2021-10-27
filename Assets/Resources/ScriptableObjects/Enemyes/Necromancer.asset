@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u041D\u0415\u041A\u0420\u041E\u041C\u0410\u041D\u0422"
   Speed: 1
-  Health: 100
+  MaxHealth: 100
   Armor: 0

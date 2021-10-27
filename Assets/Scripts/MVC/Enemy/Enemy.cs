@@ -4,9 +4,9 @@ using System;
 
 namespace TowerDefese
 {
-    public class Skeleton : EnemyView<SkeletonModel, EnemyController<SkeletonModel>>, IEnemy
+    public class Enemy : EnemyView<EnemyModel, EnemyController<EnemyModel>>, IEnemy
     {
-        [SerializeField] private EnemySO _sceletonSO;
+        [SerializeField] private EnemySO _enemySO;
         public string Name => Model.Name;
 
         public event Action<float> GetDamageEvent;
@@ -14,11 +14,11 @@ namespace TowerDefese
         public override void Awake()
         {
             base.Awake();
-            Model.MaxHealth = _sceletonSO.MaxHealth;
-            Model.Health = _sceletonSO.MaxHealth;
-            Model.Name = _sceletonSO.Name;
-            Model.Armor = _sceletonSO.Armor;
-            Model.Speed = _sceletonSO.Speed;
+            Model.MaxHealth = _enemySO.MaxHealth;
+            Model.Health = _enemySO.MaxHealth;
+            Model.Name = _enemySO.Name;
+            Model.Armor = _enemySO.Armor;
+            Model.Speed = _enemySO.Speed;
 
         }
 

@@ -40,7 +40,16 @@ namespace TowerDefese
 
         private IEnumerator FlyBullet(GameObject bullet, float timeFly)
         {
-            yield return new WaitForSeconds(timeFly);
+            while (timeFly > 0)
+            {
+                if (bullet.activeInHierarchy)
+                {
+                    timeFly -= Time.fixedDeltaTime;
+                    yield return new WaitForFixedUpdate();
+                }
+                else yield break;
+
+            }
             bullet.gameObject.SetActive(false);
         }
 

@@ -150,4 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model:
     _test: 0
-  _sceletonSO: {fileID: 11400000, guid: 32c1b2ff85f57ac45825607e1bf9dffc, type: 2}
+  _enemySO: {fileID: 11400000, guid: 32c1b2ff85f57ac45825607e1bf9dffc, type: 2}
