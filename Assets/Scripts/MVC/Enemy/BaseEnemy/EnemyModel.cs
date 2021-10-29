@@ -8,6 +8,7 @@
         public string Name { get; set; }
         public float Speed { get; set; }
         public Armor Armor { get; set; }
+        public int Price { get; set; }
     }
 
 }

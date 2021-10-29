@@ -10,5 +10,8 @@ namespace TowerDefese
 
         event Action<float> GetDamageEvent;
         Transform transform { get; }
+        Armor Armor { get; }
+        float Health { get; }
+        float Speed { get; }
     }
 }

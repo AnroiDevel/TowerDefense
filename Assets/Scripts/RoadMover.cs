@@ -11,11 +11,13 @@ namespace TowerDefese
     {
         private SpriteShapeController _spriteShapeController;
         private List<Vector2> _points;
+        private IEnemy _enemy;
 
         private void Start()
         {
             _spriteShapeController = FindObjectOfType<SpriteShapeController>();
             transform.parent = _spriteShapeController.transform;
+            _enemy = GetComponent<IEnemy>();
             GetWayPoints();
         }
 
@@ -37,7 +39,7 @@ namespace TowerDefese
             var i = 0;
             while (i < _points.Count)
             {
-                transform.localPosition = Vector2.MoveTowards(transform.localPosition, _points[i], Time.deltaTime);
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, _points[i], Time.deltaTime * _enemy.Speed);
                 yield return new WaitForEndOfFrame();
                 if ((Vector2)transform.localPosition == _points[i])
                     i++;

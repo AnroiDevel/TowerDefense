@@ -10,5 +10,6 @@ namespace TowerDefese
         public float Speed;
         public float MaxHealth;
         public Armor Armor;
+        public int Price;
     }
 }

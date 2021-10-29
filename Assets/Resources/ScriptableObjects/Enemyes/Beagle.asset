@@ -16,3 +16,4 @@ MonoBehaviour:
   Speed: 1.5
   MaxHealth: 100
   Armor: 0
+  Price: 10

@@ -1,0 +1,33 @@
+{
+    "name": "InputConroller",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "f97f009a-29f6-444e-9702-bf5f5b47318b",
+            "actions": [
+                {
+                    "name": "ClickOverBuildMenu",
+                    "type": "Button",
+                    "id": "59a36127-3520-45f6-97c4-7ac4ddb2b57d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8a8b1f3d-e3e5-4fe8-bb0b-bf20bcac05ca",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClickOverBuildMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

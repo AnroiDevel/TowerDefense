@@ -2,9 +2,9 @@
 {
     public enum Armor
     {
-        Soft,
-        Medium,
-        Hard,
-        HeroArmor,
+        Легкая,
+        Средняя,
+        Тяжелая,
+        Героя,
     }
 }

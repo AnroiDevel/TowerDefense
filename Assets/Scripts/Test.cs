@@ -5,7 +5,7 @@ namespace TowerDefese
 {
     public class Test : MonoBehaviour
     {
-       [SerializeField] private Slider _slider;
+        [SerializeField] private Slider _slider;
         [SerializeField] private GameField _gameField;
         [SerializeField] private Slider _sliderTimeScale;
 
@@ -18,7 +18,12 @@ namespace TowerDefese
         {
             Time.timeScale = _sliderTimeScale.value;
         }
+        public void TestButtonTowerCreate()
+        {
+            print("Нажата кнопка создания башни");
+        }
 
     }
+
 
 }
