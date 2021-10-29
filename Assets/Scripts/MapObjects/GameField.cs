@@ -11,6 +11,9 @@ namespace TowerDefese
         [SerializeField] private int _height = 10;
         [SerializeField] private GameObject _groundFieldPrefab;
         [SerializeField] private Transform _transform;
+        [SerializeField] private GameObject _towerPlacePrefab;
+
+        [SerializeField] private Vector2Int[] _towerPosition;
 
         private Map _map;
         private GameObject[,] _fields;
@@ -38,6 +41,9 @@ namespace TowerDefese
             var position = Camera.main.ScreenToWorldPoint(_transform.position);
             position.z = 0;
             _transform.position = position;
+
+            foreach (var tp in _towerPosition)
+                Instantiate(_towerPlacePrefab, _fields[tp.x, tp.y].transform);
         }
 
         public void ActivateNavigationGrid(float scale)
