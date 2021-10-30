@@ -216,7 +216,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.14983091, g: 0.292135, b: 0.3490566, a: 1}
   m_FlipX: 0
@@ -320,7 +320,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.26521894, g: 0.34454545, b: 0.3773585, a: 1}
   m_FlipX: 0
@@ -344,6 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001dbcb9afbb851439aa5cb080df1db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetDetector: {fileID: 1276403568969881744}
-  _rotationSpeed: 3
-  _gun: {fileID: 1276403570010831411}
+  Model:
+    _test: 0
+    _rotationSpeed: 4

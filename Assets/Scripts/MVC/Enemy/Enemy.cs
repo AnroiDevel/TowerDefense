@@ -4,7 +4,7 @@ using System;
 
 namespace TowerDefese
 {
-    public class Enemy : EnemyView<EnemyModel, EnemyController<EnemyModel>>, IEnemy
+    public class Enemy : BaseView<EnemyModel, EnemyController>, IEnemy
     {
         [SerializeField] private EnemySO _enemySO;
         public string Name => Model.Name;
