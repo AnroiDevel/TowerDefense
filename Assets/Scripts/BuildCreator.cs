@@ -9,16 +9,17 @@ namespace TowerDefese
     {
         private GameObject _buildMenuUI;
         private Transform _buildMenuTransform;
+        public ConstraintSource ConstraintSource;
 
         private void Awake()
         {
-            _buildMenuUI = FindObjectOfType<BuildMenuPanelController>().gameObject;
 
         }
 
         private void Start()
         {
-            _buildMenuUI.SetActive(false);
+            _buildMenuUI = FindObjectOfType<BuildMenuPanelController>().gameObject;
+
             _buildMenuTransform = GetComponent<Transform>();
 
         }

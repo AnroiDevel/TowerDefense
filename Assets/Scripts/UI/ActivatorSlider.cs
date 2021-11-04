@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -14,6 +12,8 @@ namespace TowerDefese
         private void Start()
         {
             _slider = transform.GetComponentInParent<Slider>();
+            if (_slider.value >= 1)
+                _slider.interactable = false;
         }
         public void OnPointerDown(PointerEventData eventData)
         {

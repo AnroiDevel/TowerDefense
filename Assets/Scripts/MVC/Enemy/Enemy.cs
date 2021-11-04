@@ -43,7 +43,7 @@ namespace TowerDefese
             if (Model.Health <= 0)
             {
                 gameObject.SetActive(false);
-                PlayerUI.Data.Score = Model.Price;
+                PlayerUI.Data.Gold = Model.Price;
                 return;
             }
 

@@ -12,8 +12,8 @@ namespace TowerDefese
         private void Start()
         {
             Data = new PlayerData();
-            Data.ChangeScore += SetScoreUI;
-            Data.Score = _startGolds;
+            Data.ChangeGold += SetScoreUI;
+            Data.Gold = _startGolds;
         }
 
         private void SetScoreUI(int value)

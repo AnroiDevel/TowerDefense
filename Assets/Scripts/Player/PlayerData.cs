@@ -5,8 +5,8 @@ namespace TowerDefese
     public class PlayerData
     {
         private int _score;
-        public Action<int> ChangeScore;
-        public int Score
+        public Action<int> ChangeGold;
+        public int Gold
         {
             get
             {
@@ -15,7 +15,7 @@ namespace TowerDefese
             set
             {
                 _score += value;
-                ChangeScore?.Invoke(_score);
+                ChangeGold?.Invoke(_score);
             }
         }
 

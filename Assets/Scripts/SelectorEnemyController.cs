@@ -24,7 +24,7 @@ namespace TowerDefese
                 _selectorEnemies[i].Selected += OnSelected;
                 _selectedImages[i] = _selectorEnemies[i].GetComponent<Image>();
             }
-            //_selectorEnemies[0].Selected?.Invoke(_selectedImages[0],"СКЕЛЕТ");
+            _selectorEnemies[0].Selected?.Invoke(_selectedImages[0], _selectorEnemies[0].name);
         }
 
         private void OnSelected(Image selectedImg, string name)
