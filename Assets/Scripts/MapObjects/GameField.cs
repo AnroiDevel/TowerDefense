@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -15,7 +13,6 @@ namespace TowerDefese
 
         [SerializeField] private Vector2Int[] _towerPosition;
 
-        private Map _map;
         private GameObject[,] _fields;
 
 
@@ -26,7 +23,6 @@ namespace TowerDefese
 
         private void InitMap()
         {
-            _map = new Map(_width, _height);
             _fields = new GameObject[_width, _height];
             for (int x = 0; x < _width; x++)
             {

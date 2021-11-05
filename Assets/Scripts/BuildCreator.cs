@@ -1,40 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.Animations;
-using UnityEngine.EventSystems;
 
 
 namespace TowerDefese
 {
-    public class BuildCreator : MonoBehaviour, IPointerDownHandler
+    public class BuildCreator : MonoBehaviour
     {
-        private GameObject _buildMenuUI;
         private Transform _buildMenuTransform;
-        public ConstraintSource ConstraintSource;
+        private ConstraintSource constraintSource;
 
-        private void Awake()
+        public ConstraintSource ConstraintSource
         {
-
+            get
+            {
+                return Constraint();
+            }
         }
 
-        private void Start()
+        private ConstraintSource Constraint()
         {
-            _buildMenuUI = FindObjectOfType<BuildMenuPanelController>().gameObject;
-
+            var c = new ConstraintSource();
             _buildMenuTransform = GetComponent<Transform>();
-
-        }
-
-        public void OnPointerDown(PointerEventData eventData)
-        {
-
-            _buildMenuUI.SetActive(true);
-            var constraint = _buildMenuUI.GetComponent<PositionConstraint>();
-            var c = constraint.GetSource(0);
             c.sourceTransform = _buildMenuTransform;
             c.weight = 1.0f;
-            constraint.SetSource(0, c);
+            constraintSource = c;
+            return constraintSource;
         }
-
     }
 
 }
