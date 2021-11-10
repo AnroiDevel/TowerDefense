@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace TowerDefese
 {
     public class Test : MonoBehaviour
@@ -11,7 +12,8 @@ namespace TowerDefese
 
         public void GridActivation()
         {
-            _gameField.ActivateNavigationGrid(_slider.value);
+            if (_gameField != null)
+                _gameField.ActivateNavigationGrid(_slider.value);
         }
 
         public void TimeScale()
