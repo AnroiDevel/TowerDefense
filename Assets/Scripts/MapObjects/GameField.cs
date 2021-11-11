@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -23,11 +24,13 @@ namespace TowerDefese
 
         private GameObject[,] _fields;
 
+
         private List<GameObject> _towers = new List<GameObject>();
-        private void Awake()
+
+        private void Start()
         {
-            InitMap();
             _startPosition = _transform.position;
+            InitMap();
         }
 
         public void InitMap()
@@ -54,7 +57,8 @@ namespace TowerDefese
             foreach (var tp in _towerPosition)
             {
                 var tower = Instantiate(_towerPlacePrefab, _fields[tp.x, tp.y].transform);
-                _vector2Ints.Add(tp);
+                var towerPosition = new Vector2Int((int)tower.transform.position.x, (int)tower.transform.position.y);
+                _vector2Ints.Add(towerPosition);
                 _towers.Add(tower);
             }
         }
@@ -88,7 +92,6 @@ namespace TowerDefese
             var pos = returnedData.TowersPositions[1];
             _towers[0].transform.position = pos + (Vector2)_transform.position;
         }
-
     }
 
 }

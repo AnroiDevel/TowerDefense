@@ -6,4 +6,5 @@ using UnityEngine.Animations;
 
 public class GameManager : MonoBehaviour
 {
+
 }
