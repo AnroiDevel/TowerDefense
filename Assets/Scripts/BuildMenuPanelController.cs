@@ -48,7 +48,7 @@ namespace TowerDefese
         {
             var towerPos = _positionConstraint.GetSource(0).sourceTransform;
             Instantiate(_towerPrefab, towerPos.position, Quaternion.identity);
-            gameObject.SetActive(false);
+            _clickOverMenuPanel = false;
 
         }
 

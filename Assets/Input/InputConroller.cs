@@ -35,6 +35,15 @@ public partial class @InputConroller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClickOnTowerPlaceCollider"",
+                    ""type"": ""Button"",
+                    ""id"": ""45453c67-6531-4339-b538-ac4d60ef6833"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +57,17 @@ public partial class @InputConroller : IInputActionCollection2, IDisposable
                     ""action"": ""ClickOverBuildMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e7d4f17-f025-489d-856f-2d9f75fbfd7d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClickOnTowerPlaceCollider"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +77,7 @@ public partial class @InputConroller : IInputActionCollection2, IDisposable
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
         m_Main_ClickOverBuildMenu = m_Main.FindAction("ClickOverBuildMenu", throwIfNotFound: true);
+        m_Main_ClickOnTowerPlaceCollider = m_Main.FindAction("ClickOnTowerPlaceCollider", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -117,11 +138,13 @@ public partial class @InputConroller : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Main;
     private IMainActions m_MainActionsCallbackInterface;
     private readonly InputAction m_Main_ClickOverBuildMenu;
+    private readonly InputAction m_Main_ClickOnTowerPlaceCollider;
     public struct MainActions
     {
         private @InputConroller m_Wrapper;
         public MainActions(@InputConroller wrapper) { m_Wrapper = wrapper; }
         public InputAction @ClickOverBuildMenu => m_Wrapper.m_Main_ClickOverBuildMenu;
+        public InputAction @ClickOnTowerPlaceCollider => m_Wrapper.m_Main_ClickOnTowerPlaceCollider;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -134,6 +157,9 @@ public partial class @InputConroller : IInputActionCollection2, IDisposable
                 @ClickOverBuildMenu.started -= m_Wrapper.m_MainActionsCallbackInterface.OnClickOverBuildMenu;
                 @ClickOverBuildMenu.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnClickOverBuildMenu;
                 @ClickOverBuildMenu.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnClickOverBuildMenu;
+                @ClickOnTowerPlaceCollider.started -= m_Wrapper.m_MainActionsCallbackInterface.OnClickOnTowerPlaceCollider;
+                @ClickOnTowerPlaceCollider.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnClickOnTowerPlaceCollider;
+                @ClickOnTowerPlaceCollider.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnClickOnTowerPlaceCollider;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -141,6 +167,9 @@ public partial class @InputConroller : IInputActionCollection2, IDisposable
                 @ClickOverBuildMenu.started += instance.OnClickOverBuildMenu;
                 @ClickOverBuildMenu.performed += instance.OnClickOverBuildMenu;
                 @ClickOverBuildMenu.canceled += instance.OnClickOverBuildMenu;
+                @ClickOnTowerPlaceCollider.started += instance.OnClickOnTowerPlaceCollider;
+                @ClickOnTowerPlaceCollider.performed += instance.OnClickOnTowerPlaceCollider;
+                @ClickOnTowerPlaceCollider.canceled += instance.OnClickOnTowerPlaceCollider;
             }
         }
     }
@@ -148,5 +177,6 @@ public partial class @InputConroller : IInputActionCollection2, IDisposable
     public interface IMainActions
     {
         void OnClickOverBuildMenu(InputAction.CallbackContext context);
+        void OnClickOnTowerPlaceCollider(InputAction.CallbackContext context);
     }
 }

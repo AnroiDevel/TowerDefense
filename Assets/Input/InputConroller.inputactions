@@ -11,7 +11,17 @@
                     "id": "59a36127-3520-45f6-97c4-7ac4ddb2b57d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ClickOnTowerPlaceCollider",
+                    "type": "Button",
+                    "id": "45453c67-6531-4339-b538-ac4d60ef6833",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -23,6 +33,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ClickOverBuildMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e7d4f17-f025-489d-856f-2d9f75fbfd7d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClickOnTowerPlaceCollider",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

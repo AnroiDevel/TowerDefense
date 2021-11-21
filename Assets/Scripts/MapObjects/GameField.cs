@@ -1,8 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -17,12 +14,13 @@ namespace TowerDefese
         [SerializeField] private GameObject _towerPlacePrefab;
 
         [SerializeField] private Vector2Int[] _towerPosition;
+        [SerializeField] private string _pathSave;
 
-        private List<Vector2Int> _vector2Ints = new List<Vector2Int>();
-
+        private List<Vector3> _towersPositions = new List<Vector3>();
         private Vector3 _startPosition;
 
         private GameObject[,] _fields;
+        private List<Vector3> _fieldsPositions = new List<Vector3>();
 
 
         private List<GameObject> _towers = new List<GameObject>();
@@ -54,13 +52,19 @@ namespace TowerDefese
             }
 
             _transform.position = new Vector3(-_width / 2, -_height / 2, 0);
+
+            foreach (var field in _fields)
+                _fieldsPositions.Add(field.transform.position);
+
             foreach (var tp in _towerPosition)
             {
                 var tower = Instantiate(_towerPlacePrefab, _fields[tp.x, tp.y].transform);
-                var towerPosition = new Vector2Int((int)tower.transform.position.x, (int)tower.transform.position.y);
-                _vector2Ints.Add(towerPosition);
+                tower.GetComponent<SpriteRenderer>().sortingOrder--;
+                _towersPositions.Add(tower.transform.position);
                 _towers.Add(tower);
             }
+
+
         }
 
         public void ActivateNavigationGrid(float scale)
@@ -71,26 +75,14 @@ namespace TowerDefese
                     field.transform.localScale = newScale;
         }
 
-
         public void SaveGameField()
         {
-            string path = Application.dataPath + "/Resources/Json/text.json";
-
+            string path = Application.dataPath + _pathSave;
             SaveData data = new SaveData();
-            data.TowersPositions = _vector2Ints;
+            data.TowersPositions = _towersPositions;
+            data.FieldsPositions = _fieldsPositions;
             string value = JsonUtility.ToJson(data);
             File.WriteAllText(path, value);
-        }
-
-        public void LoadGameField()
-        {
-            string path = Application.dataPath + "/Resources/Json/text.json";
-            var jsonDataAsBytes = File.ReadAllBytes(path);
-            string jsonData = Encoding.ASCII.GetString(jsonDataAsBytes);
-            SaveData returnedData = new SaveData();
-            JsonUtility.FromJsonOverwrite(jsonData, returnedData);
-            var pos = returnedData.TowersPositions[1];
-            _towers[0].transform.position = pos + (Vector2)_transform.position;
         }
     }
 

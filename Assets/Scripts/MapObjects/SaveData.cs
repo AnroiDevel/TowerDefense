@@ -8,12 +8,12 @@ namespace TowerDefese
     [Serializable]
     public class SaveData
     {
-        public List<Vector2Int> TowersPositions;
+        public List<Vector3> TowersPositions;
+        public List<Vector3> FieldsPositions;
 
-        public SaveData()
-        {
-            TowersPositions = new List<Vector2Int>();
-        }
+        public Vector3 StartPosition;
+        public Vector3 EndPosition;
+
     }
 
 }
